@@ -1,6 +1,5 @@
 <template>
   <div class="portfolio">
-    <img src="@/assets/profile.jpg" alt="Profilbild" class="profile-pic" />
     <h1>Noah David</h1>
     <p>Webentwickler | Vue.js & Frontend-Designer 🚀</p>
 
