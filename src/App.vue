@@ -1,6 +1,5 @@
 <template>
   <div id="app">
-    <h1>Meine Vue App</h1>
     <MyComponent />
   </div>
 </template>
@@ -19,5 +18,6 @@ export default {
 #app {
   font-family: Arial, sans-serif;
   text-align: center;
+  margin-top: 50px;
 }
 </style>
