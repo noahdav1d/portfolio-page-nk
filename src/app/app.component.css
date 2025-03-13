@@ -1,0 +1,29 @@
+html {
+  scroll-behavior: smooth;
+}
+
+section {
+  min-height: 100vh; /* Jeder Abschnitt füllt den Bildschirm */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 50px;
+}
+
+#hero {
+  color: white;
+  text-align: center;
+}
+
+#about {
+  background-color: #f8f8f8;
+}
+#cv {
+  background-color: #e0e0e0;
+}
+#projects {
+  background-color: #cccccc;
+}
+#contact {
+  background-color: #b0b0b0;
+}
