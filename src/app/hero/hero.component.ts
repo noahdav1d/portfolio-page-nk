@@ -2,10 +2,8 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-hero',
-  imports: [],
+  standalone: true, // Damit es eine Standalone-Komponente ist
   templateUrl: './hero.component.html',
-  styleUrl: './hero.component.css'
+  styleUrls: ['./hero.component.css'], // styleUrls mit "s"
 })
-export class HeroComponent {
-
-}
+export class HeroComponent {}

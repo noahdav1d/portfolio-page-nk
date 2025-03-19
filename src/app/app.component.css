@@ -2,28 +2,40 @@ html {
   scroll-behavior: smooth;
 }
 
+body {
+  background: #1e2a38;
+  transition: background-color 1s ease-in-out;
+}
+
 section {
-  min-height: 100vh; /* Jeder Abschnitt füllt den Bildschirm */
+  min-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 50px;
+  transition: opacity 1s ease-in-out, transform 1s ease-in-out;
 }
 
-#hero {
-  color: white;
-  text-align: center;
+section:not(:first-child) {
+  opacity: 0.5;
+  transform: translateY(50px);
 }
 
+section.in-view {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Abschnittsfarben */
 #about {
-  background-color: #f8f8f8;
+  background-color: rgba(248, 248, 248, 0.9);
 }
 #cv {
-  background-color: #e0e0e0;
+  background-color: rgba(224, 224, 224, 0.9);
 }
 #projects {
-  background-color: #cccccc;
+  background-color: rgba(204, 204, 204, 0.9);
 }
 #contact {
-  background-color: #b0b0b0;
+  background-color: rgba(176, 176, 176, 0.9);
 }

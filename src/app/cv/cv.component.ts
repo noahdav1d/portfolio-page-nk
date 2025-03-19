@@ -2,10 +2,8 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-cv',
-  imports: [],
+  standalone: true, // Standalone-Modus aktiviert
   templateUrl: './cv.component.html',
-  styleUrl: './cv.component.css'
+  styleUrls: ['./cv.component.css'], // styleUrls mit "s"
 })
-export class CvComponent {
-
-}
+export class CvComponent {}

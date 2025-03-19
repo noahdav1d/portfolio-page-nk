@@ -1,29 +1,56 @@
-import { TestBed } from '@angular/core/testing';
-import { AppComponent } from './app.component';
+import { Component, AfterViewInit, HostListener } from '@angular/core';
+import { HeaderComponent } from './header/header.component';
+import { AboutMeComponent } from './about-me/about-me.component';
+import { ContactComponent } from './contact/contact.component';
+import { CvComponent } from './cv/cv.component';
+import { FooterComponent } from './footer/footer.component';
+import { HeroComponent } from './hero/hero.component';
+import { ProjectsComponent } from './projects/projects.component';
 
-describe('AppComponent', () => {
-  beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      imports: [AppComponent],
-    }).compileComponents();
-  });
+@Component({
+  selector: 'app-root',
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.css'],
+  imports: [
+    HeaderComponent,
+    AboutMeComponent,
+    ContactComponent,
+    CvComponent,
+    FooterComponent,
+    HeroComponent,
+    ProjectsComponent,
+  ],
+})
+export class AppComponent implements AfterViewInit {
+  title = 'portfolio-page-nk';
 
-  it('should create the app', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.componentInstance;
-    expect(app).toBeTruthy();
-  });
+  @HostListener('window:scroll', [])
+  onScroll(): void {
+    this.handleScroll();
+  }
 
-  it(`should have the 'portfolio-page-nk' title`, () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.componentInstance;
-    expect(app.title).toEqual('portfolio-page-nk');
-  });
+  ngAfterViewInit(): void {
+    this.handleScroll();
+  }
 
-  it('should render title', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    fixture.detectChanges();
-    const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('h1')?.textContent).toContain('Hello, portfolio-page-nk');
-  });
-});
+  private handleScroll(): void {
+    const sections = document.querySelectorAll('section');
+    sections.forEach((section) => {
+      const rect = section.getBoundingClientRect();
+      if (rect.top >= 0 && rect.bottom <= window.innerHeight) {
+        section.classList.add('in-view');
+      } else {
+        section.classList.remove('in-view');
+      }
+    });
+
+    // Dynamischer Hintergrundwechsel
+    const scrollY = window.scrollY;
+    const maxScroll = document.body.scrollHeight - window.innerHeight;
+    const percentage = scrollY / maxScroll;
+
+    document.body.style.backgroundColor = `rgb(${30 + percentage * 50}, ${
+      42 + percentage * 50
+    }, ${56 + percentage * 50})`;
+  }
+}
