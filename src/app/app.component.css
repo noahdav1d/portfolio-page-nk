@@ -3,8 +3,7 @@ html {
 }
 
 body {
-  background: #1e2a38;
-  transition: background-color 1s ease-in-out;
+  background: #f8f9fa;
 }
 
 section {
@@ -24,18 +23,4 @@ section:not(:first-child) {
 section.in-view {
   opacity: 1;
   transform: translateY(0);
-}
-
-/* Abschnittsfarben */
-#about {
-  background-color: rgba(248, 248, 248, 0.9);
-}
-#cv {
-  background-color: rgba(224, 224, 224, 0.9);
-}
-#projects {
-  background-color: rgba(204, 204, 204, 0.9);
-}
-#contact {
-  background-color: rgba(176, 176, 176, 0.9);
 }
