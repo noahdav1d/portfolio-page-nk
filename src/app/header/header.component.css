@@ -70,7 +70,7 @@ nav ul li a {
 
 /* Hover: Größer + Fett */
 nav ul li a:hover {
-  transform: scale(1.7);
+  transform: scale(2);
   font-weight: bold;
 }
 
