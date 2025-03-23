@@ -1,11 +1,47 @@
-/* Fix: Navigation immer sichtbar */
+/* Burger-Menü */
+.burger {
+  position: fixed;
+  top: 15px;
+  left: 15px;
+  width: 40px;
+  height: 30px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  z-index: 1100;
+}
+
+.burger span {
+  display: block;
+  height: 4px;
+  width: 100%;
+  background: var(--text-color);
+  border-radius: 9px;
+  transition: 0.25s ease-in-out;
+}
+
+/* Animation für das X */
+.burger.active span:nth-of-type(1) {
+  transform: rotate(45deg) translate(10px, 6px);
+}
+
+.burger.active span:nth-of-type(2) {
+  opacity: 0;
+}
+
+.burger.active span:nth-of-type(3) {
+  transform: rotate(-45deg) translate(12px, -8px);
+}
+
+/* Navigation */
 nav {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100vh;
-  background: rgba(0, 0, 0, 0.9);
+  background: var(--background-color);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -14,13 +50,6 @@ nav {
   z-index: 1000;
 }
 
-/* Verhindert das Scroll-Problem nach dem Klicken */
-html,
-body {
-  scroll-behavior: smooth;
-}
-
-/* Navigation bleibt sichtbar */
 nav ul {
   list-style: none;
   padding: 0;
@@ -32,7 +61,7 @@ nav ul li {
 }
 
 nav ul li a {
-  color: white;
+  color: var(--text-color);
   text-decoration: none;
   font-size: 24px;
   transition: color 0.3s ease-in-out, transform 0.3s ease-in-out,
@@ -41,80 +70,11 @@ nav ul li a {
 
 /* Hover: Größer + Fett */
 nav ul li a:hover {
-  color: lightgray;
   transform: scale(1.7);
   font-weight: bold;
 }
 
-/* Burger-Menü */
-.burger {
-  position: fixed;
-  top: 15px;
-  left: 15px;
-  width: 40px;
-  height: 30px;
-  background: transparent;
-  cursor: pointer;
-  display: block;
-  z-index: 1100;
-}
-
-.burger input {
-  display: none;
-}
-
-.burger span {
-  display: block;
-  position: absolute;
-  height: 4px;
-  width: 100%;
-  background: black;
-  border-radius: 9px;
-  left: 0;
-  transform: rotate(0deg);
-  transition: 0.25s ease-in-out;
-}
-
-.burger span:nth-of-type(1) {
-  top: 0px;
-  transform-origin: left center;
-}
-
-.burger span:nth-of-type(2) {
-  top: 50%;
-  transform: translateY(-50%);
-  transform-origin: left center;
-}
-
-.burger span:nth-of-type(3) {
-  top: 100%;
-  transform: translateY(-100%);
-  transform-origin: left center;
-}
-
-.burger input:checked ~ span:nth-of-type(1) {
-  transform: rotate(45deg);
-  top: 0px;
-  left: 5px;
-}
-
-.burger input:checked ~ span:nth-of-type(2) {
-  width: 0%;
-  opacity: 0;
-}
-
-.burger input:checked ~ span:nth-of-type(3) {
-  transform: rotate(-45deg);
-  top: 28px;
-  left: 5px;
-}
-
-/* Fix: Navigation sichtbar machen */
+/* Navigation sichtbar machen */
 nav.active {
   transform: translateX(0);
-}
-
-/* Fix: Burger wird weiß beim Öffnen */
-.burger.active span {
-  background: white;
 }

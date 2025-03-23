@@ -1,17 +1,22 @@
 <!-- Burger-Icon -->
-<div id="burger-menu" class="burger">
+<div
+  id="burger-menu"
+  class="burger"
+  (click)="toggleMenu()"
+  [class.active]="menuOpen"
+>
   <span></span>
   <span></span>
   <span></span>
 </div>
 
 <!-- Navigation -->
-<nav id="nav-menu">
+<nav id="nav-menu" [class.active]="menuOpen">
   <ul>
-    <li><a href="#hero">Hero</a></li>
-    <li><a href="#about">Über mich</a></li>
-    <li><a href="#cv">Lebenslauf</a></li>
-    <li><a href="#projects">Projekte</a></li>
-    <li><a href="#contact">Kontakt</a></li>
+    <li><a href="#hero" (click)="closeMenu()">Hero</a></li>
+    <li><a href="#about" (click)="closeMenu()">Über mich</a></li>
+    <li><a href="#cv" (click)="closeMenu()">Lebenslauf</a></li>
+    <li><a href="#projects" (click)="closeMenu()">Projekte</a></li>
+    <li><a href="#contact" (click)="closeMenu()">Kontakt</a></li>
   </ul>
 </nav>
