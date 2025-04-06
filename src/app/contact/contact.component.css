@@ -1,0 +1,80 @@
+.social-links,
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.social-btn {
+  cursor: pointer;
+  height: 100px; /* Doppelte Höhe */
+  width: 100px; /* Doppelte Breite */
+  font-family: "Titillium Web", sans-serif;
+  color: #333;
+  border-radius: 20px; /* Abgerundete Ecken */
+  box-shadow: 0px 15px 15px rgba(0, 0, 0, 0.2); /* Stärkerer Schatten */
+  background: white;
+  margin: 10px; /* Mehr Abstand zwischen den Buttons */
+  transition: 0.3s;
+  justify-content: center;
+  text-decoration: none; /* Entfernt Unterstreichung */
+}
+
+.social-btn svg {
+  height: 48px; /* Größeres Icon */
+  width: 48px; /* Größeres Icon */
+}
+
+.social-btn span {
+  width: 0px;
+  overflow: hidden;
+  transition: 0.3s;
+  text-align: center;
+  margin-left: 5px;
+}
+
+.social-btn:hover {
+  width: 200px; /* Breiter beim Hover */
+  border-radius: 10px;
+}
+
+.social-btn:hover span {
+  padding: 2px;
+  width: auto; /* Zeigt den Text an */
+}
+
+/* Verstärkte Farben */
+#mail svg {
+  fill: #d32f2f; /* Intensiveres Rot für Mail */
+}
+
+#linkedin svg {
+  fill: #0077b5; /* Intensiveres Blau für LinkedIn */
+}
+
+#github svg {
+  fill: #000000; /* Intensiveres Schwarz für GitHub */
+}
+
+/* Dark Mode Anpassungen */
+.dark-mode .social-btn {
+  background: #1e1e1e; /* Dunkler Hintergrund */
+  color: #f1f1f1; /* Helle Schrift */
+  box-shadow: 0px 15px 15px rgba(0, 0, 0, 0.5); /* Stärkerer Schatten */
+}
+
+.dark-mode .social-btn svg {
+  fill: #f1f1f1; /* Helle Icons */
+}
+
+.dark-mode #mail svg {
+  fill: #ff6659; /* Helleres Rot für Mail */
+}
+
+.dark-mode #linkedin svg {
+  fill: #00a0dc; /* Helleres Blau für LinkedIn */
+}
+
+.dark-mode #github svg {
+  fill: #ffffff; /* Weiß für GitHub */
+}
