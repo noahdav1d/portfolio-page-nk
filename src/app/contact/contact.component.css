@@ -3,12 +3,13 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-wrap: wrap; /* Ermöglicht Umbruch der Buttons */
 }
 
 .social-btn {
   cursor: pointer;
-  height: 100px; /* Doppelte Höhe */
-  width: 100px; /* Doppelte Breite */
+  height: 100px; /* Quadratische Form */
+  width: 100px; /* Quadratische Form */
   font-family: "Titillium Web", sans-serif;
   color: #333;
   border-radius: 20px; /* Abgerundete Ecken */
@@ -34,7 +35,8 @@
 }
 
 .social-btn:hover {
-  width: 200px; /* Breiter beim Hover */
+  width: 100px; /* Beibehaltung der quadratischen Form */
+  height: 100px; /* Beibehaltung der quadratischen Form */
   border-radius: 10px;
 }
 
@@ -77,4 +79,23 @@
 
 .dark-mode #github svg {
   fill: #ffffff; /* Weiß für GitHub */
+}
+
+/* Responsivität für Smartphones */
+@media (max-width: 768px) {
+  .social-links {
+    flex-direction: column; /* Buttons untereinander anordnen */
+    align-items: center; /* Zentriert die Buttons */
+  }
+
+  .social-btn {
+    width: 100px; /* Quadratische Form beibehalten */
+    height: 100px; /* Quadratische Form beibehalten */
+    margin: 10px 0; /* Vertikaler Abstand zwischen den Buttons */
+  }
+
+  .social-btn:hover {
+    width: 100px; /* Quadratische Form bleibt auch beim Hover */
+    height: 100px; /* Quadratische Form bleibt auch beim Hover */
+  }
 }
