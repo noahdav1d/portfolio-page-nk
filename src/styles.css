@@ -13,6 +13,7 @@ body {
   background-color: var(--background-color);
   color: var(--text-color);
   transition: background 0.3s, color 0.3s;
+  opacity: 1; /* Keine Transparenz */
 }
 
 /* Dark Mode Switch */
@@ -50,9 +51,10 @@ body {
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: #f4f4f5;
+  background-color: #f4f4f5; /* Undurchsichtige Farbe */
   transition: 0.4s;
   border-radius: 30px;
+  opacity: 1; /* Keine Transparenz */
 }
 
 .slider:before {
@@ -64,12 +66,17 @@ body {
   left: var(--slider-offset, 0.3em);
   top: 50%;
   transform: translateY(-50%);
-  background: linear-gradient(40deg, #ff0080, #ff8c00 70%);
+  background: linear-gradient(
+    40deg,
+    #ff0050,
+    #ff7f00 70%
+  ); /* Intensiverer Farbverlauf */
   transition: 0.4s;
+  opacity: 1; /* Keine Transparenz */
 }
 
 input:checked + .slider {
-  background-color: #303136;
+  background-color: #1a1a1a; /* Intensiveres Schwarz */
 }
 
 input:checked + .slider:before {
