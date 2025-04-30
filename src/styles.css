@@ -84,3 +84,27 @@ input:checked + .slider:before {
   background: #303136;
   box-shadow: inset -3px -2px 5px -2px #8983f7, inset -10px -4px 0 0 #a3dafb;
 }
+
+/* Globale CSS-Regeln für Überschriften und Untertitel */
+.section-title {
+  text-align: center;
+  font-size: 2.3rem; /* 15% kleiner als vorher (3rem -> 2.55rem) */
+  font-weight: bold;
+  margin: 0; /* Kein zusätzlicher Abstand */
+  color: var(--text-color); /* Dynamische Farbe für Dark Mode */
+  position: absolute;
+  top: 2.5%; /* Positioniert die Überschrift höher auf der Seite */
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.section-subtitle {
+  text-align: center;
+  font-size: 1.275rem; /* 15% kleiner als vorher (1.5rem -> 1.275rem) */
+  font-weight: normal;
+  color: var(--text-color); /* Dynamische Farbe für Dark Mode */
+  position: absolute;
+  top: 5.5%; /* Positioniert den Untertitel höher auf der Seite */
+  left: 50%;
+  transform: translateX(-50%);
+}
