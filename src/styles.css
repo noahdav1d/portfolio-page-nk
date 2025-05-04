@@ -88,23 +88,20 @@ input:checked + .slider:before {
 /* Globale CSS-Regeln für Überschriften und Untertitel */
 .section-title {
   text-align: center;
-  font-size: 2.3rem; /* 15% kleiner als vorher (3rem -> 2.55rem) */
+  font-size: 2.3rem; /* Kleinere Schriftgröße */
   font-weight: bold;
-  margin: 0; /* Kein zusätzlicher Abstand */
-  color: var(--text-color); /* Dynamische Farbe für Dark Mode */
-  position: absolute;
-  top: 2.5%; /* Positioniert die Überschrift höher auf der Seite */
-  left: 50%;
-  transform: translateX(-50%);
+  margin: 0;
+  color: var(--text-color);
+  position: relative; /* Ändert von absolute zu relative */
+  margin-top: 40px; /* Mehr Abstand nach oben */
+  margin-bottom: 20px; /* Abstand zum Untertitel */
 }
 
 .section-subtitle {
   text-align: center;
-  font-size: 1.275rem; /* 15% kleiner als vorher (1.5rem -> 1.275rem) */
+  font-size: 1.2rem; /* Kleinere Schriftgröße */
   font-weight: normal;
-  color: var(--text-color); /* Dynamische Farbe für Dark Mode */
-  position: absolute;
-  top: 5.5%; /* Positioniert den Untertitel höher auf der Seite */
-  left: 50%;
-  transform: translateX(-50%);
+  color: var(--text-color);
+  margin-bottom: 40px; /* Mehr Abstand zum Seiteninhalt */
+  position: relative; /* Ändert von absolute zu relative */
 }

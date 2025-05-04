@@ -1,0 +1,119 @@
+.cv-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+  padding: 20px;
+}
+
+.cv-section {
+  background-color: var(--background-color);
+  border: 1px solid var(--text-color);
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.cv-section:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+}
+
+.cv-section-title {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: var(--text-color);
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.cv-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.cv-item {
+  margin-bottom: 15px;
+  background-color: #f9f9f9; /* Standard-Hintergrundfarbe */
+  border-radius: 8px;
+  padding: 15px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.cv-item:hover {
+  background-color: #e0f7fa; /* Helle Türkisfarbe beim Hover */
+  transform: translateY(-3px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.cv-item h3 {
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: var(--text-color);
+  margin: 0 0 5px;
+}
+
+.cv-item p {
+  font-size: 1rem;
+  color: var(--text-color);
+  margin: 0;
+}
+
+.cv-sublist {
+  list-style: none;
+  padding-left: 20px;
+  margin-top: 10px;
+}
+
+.cv-subitem {
+  font-size: 0.9rem;
+  color: #666;
+  margin-bottom: 5px;
+}
+
+/* Dark Mode Anpassungen */
+body.dark-mode .cv-item {
+  background-color: #1e1e1e; /* Dunkler Hintergrund für Dark Mode */
+}
+
+body.dark-mode .cv-item:hover {
+  background-color: #333; /* Hellerer Hintergrund beim Hover im Dark Mode */
+}
+
+body.dark-mode .cv-subitem {
+  color: #aaa; /* Hellerer Text für Unterpunkte im Dark Mode */
+}
+
+/* Allgemeine Überschriften-Anpassung */
+.section-title {
+  text-align: center;
+  font-size: 2.3rem; /* Kleinere Schriftgröße */
+  font-weight: bold;
+  margin: 0;
+  color: var(--text-color);
+  position: relative; /* Ändert von absolute zu relative */
+  margin-top: 20px; /* Abstand nach oben */
+}
+
+.section-subtitle {
+  text-align: center;
+  font-size: 1.2rem; /* Kleinere Schriftgröße */
+  font-weight: normal;
+  color: var(--text-color);
+  margin-bottom: 20px;
+  position: relative; /* Ändert von absolute zu relative */
+}
+
+/* Responsive Design */
+@media (min-width: 768px) {
+  .cv-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .cv-container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
