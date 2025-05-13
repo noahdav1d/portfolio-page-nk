@@ -1,20 +1,95 @@
 <section class="about-me">
   <h1 class="section-title">About Me</h1>
-  <p class="section-subtitle">A brief introduction to who I am.</p>
+  <p class="section-subtitle">Passionate about creating digital solutions</p>
 
-  <div class="profile-card">
-    <img
-      src="./src/app/about-me/Bewerbungsfoto.jpg"
-      alt="Profile Picture"
-      class="profile-picture"
-    />
-    <div class="profile-details">
-      <ul class="profile-info">
-        <li><strong>Name:</strong> Noah Kiefer</li>
-        <li><strong>Date of Birth:</strong> January 1, 1995</li>
-        <li><strong>Location:</strong> Switzerland</li>
-        <li><strong>Profession:</strong> Software Developer</li>
-      </ul>
+  <div class="sections-container">
+    <!-- Profile Section -->
+    <div class="profile-section">
+      <div class="profile-card">
+        <div class="image-container">
+          <img
+            [src]="'./assets/Bewerbungsfoto.jpg'"
+            alt="Profile Picture"
+            class="profile-picture"
+          />
+        </div>
+
+        <div class="profile-details">
+          <h2>Noah Kiefer</h2>
+          <span class="title">Software Developer</span>
+
+          <div class="info-grid">
+            <div class="info-item">
+              <span class="label">Location</span>
+              <span class="value">Switzerland</span>
+            </div>
+            <div class="info-item">
+              <span class="label">Experience</span>
+              <span class="value">5+ Years</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Hobbies Section -->
+    <div class="hobbies-section">
+      <h3>My Hobbies</h3>
+      <div class="hobbies-grid">
+        <div class="hobby-card">
+          <i class="fas fa-code"></i>
+          <h4>Coding</h4>
+          <p>Building side projects and learning new technologies</p>
+        </div>
+        <div class="hobby-card">
+          <i class="fas fa-camera"></i>
+          <h4>Photography</h4>
+          <p>Capturing moments and landscapes</p>
+        </div>
+        <div class="hobby-card">
+          <i class="fas fa-hiking"></i>
+          <h4>Hiking</h4>
+          <p>Exploring the Swiss mountains</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Quiz Section -->
+    <div class="quiz-section">
+      <h3>Test Your Knowledge</h3>
+      <div class="quiz-container">
+        <div
+          *ngFor="let question of questions; let i = index"
+          class="question-card"
+        >
+          <p>{{ question.text }}</p>
+          <div class="options">
+            <button
+              *ngFor="let option of question.options"
+              [class.selected]="option === question.selected"
+              [class.correct]="showResults && option === question.correctAnswer"
+              [class.incorrect]="
+                showResults &&
+                option === question.selected &&
+                option !== question.correctAnswer
+              "
+              (click)="selectAnswer(i, option)"
+            >
+              {{ option }}
+            </button>
+          </div>
+        </div>
+        <button
+          class="check-answers"
+          (click)="checkAnswers()"
+          [disabled]="!canCheckAnswers()"
+        >
+          Check Answers
+        </button>
+        <div *ngIf="showResults" class="results">
+          Score: {{ correctAnswers }}/{{ questions.length }}
+        </div>
+      </div>
     </div>
   </div>
 </section>
