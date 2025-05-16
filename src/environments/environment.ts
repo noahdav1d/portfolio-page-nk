@@ -1,3 +1,5 @@
+import { privateConfig } from './environment.private';
+
 export const environment = {
   production: false,
   recaptcha: {
@@ -7,5 +9,8 @@ export const environment = {
     publicKey: '8ZLDa-eikE2QwbjRu',
     serviceId: 'service_bcbb76p',
     templateId: 'template_z8atj71',
+  },
+  github: {
+    token: privateConfig.github.token,
   },
 };
