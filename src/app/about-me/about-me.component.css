@@ -2,7 +2,10 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 20px;
+  padding: 4rem 2rem;
+  background-color: var(--background-color);
+  position: relative; /* Hinzugefügt */
+  z-index: 1; /* Hinzugefügt */
 }
 
 .content-wrapper {
@@ -11,6 +14,7 @@
   align-items: center;
   min-height: 80vh;
   padding: 2rem;
+  background-color: transparent; /* Hinzugefügt */
 }
 
 .sections-container {
@@ -25,6 +29,7 @@
   max-width: 1200px;
   margin: 0 auto;
   padding: 2rem;
+  background-color: transparent; /* Hinzugefügt */
 }
 
 /* Ab einer Bildschirmbreite von 768px */
@@ -57,6 +62,7 @@
   display: flex;
   gap: 2rem;
   background-color: var(--background-color);
+  backdrop-filter: none; /* Hinzugefügt */
   border-radius: 15px;
   padding: 2rem;
   max-width: 800px;
@@ -159,7 +165,8 @@
 }
 
 .hobby-card {
-  background-color: rgba(var(--text-color-rgb), 0.05);
+  background-color: var(--card-background); /* Geändert */
+  backdrop-filter: none; /* Hinzugefügt */
   padding: 1.5rem;
   border-radius: 10px;
   text-align: center;
@@ -250,6 +257,163 @@
   font-weight: bold;
 }
 
+/* Carousel Section Styles */
+.carousel-container {
+  max-width: 1200px; /* Erhöht von 1000px */
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem; /* Erhöht von 1rem */
+  padding: 0 60px; /* Platz für die Buttons */
+  position: relative; /* Wichtig für absolute Positionierung der Buttons */
+}
+
+.carousel-content {
+  flex: 1;
+  background: var(--card-background);
+  backdrop-filter: none; /* Hinzugefügt */
+  border-radius: 12px;
+  padding: 3rem; /* Erhöht von 2rem */
+  min-height: 400px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 800px; /* Erhöht von 600px */
+}
+
+.section-icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.carousel-content h3 {
+  color: var(--primary-color);
+  margin-bottom: 1.5rem;
+  font-size: 1.5rem;
+}
+
+.section-content {
+  width: 100%;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0 1rem; /* Neuer Abstand */
+}
+
+.section-content ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+}
+
+.section-content li {
+  margin-bottom: 1rem; /* Erhöht von 0.8rem */
+  padding-left: 1.5rem;
+  position: relative;
+  line-height: 1.6; /* Verbesserte Lesbarkeit */
+}
+
+.section-content li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: var(--primary-color);
+}
+
+/* Navigation Buttons */
+.nav-button {
+  background: none;
+  border: none;
+  color: var(--text-color);
+  cursor: pointer;
+  padding: 1rem;
+  font-size: 1.5rem;
+  opacity: 0.7;
+  transition: opacity 0.3s ease;
+  position: absolute; /* Geändert zu absolute */
+  top: 50%; /* Zentriert vertikal */
+  transform: translateY(-50%);
+  z-index: 2;
+  width: 50px; /* Feste Breite */
+  height: 50px; /* Feste Höhe */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.nav-button.prev {
+  left: 0; /* Am linken Rand */
+}
+
+.nav-button.next {
+  right: 0; /* Am rechten Rand */
+}
+
+.nav-button:hover {
+  opacity: 1;
+}
+
+.carousel-dots {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.carousel-dots span {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: var(--border-color);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.carousel-dots span.active {
+  background-color: var(--primary-color);
+  transform: scale(1.2);
+}
+
+/* Title Section Styles */
+.title-section {
+  text-align: center;
+  margin-bottom: 4rem; /* Vergrößerter Abstand zum Carousel */
+}
+
+.section-title {
+  font-size: 2.5rem;
+  color: var(--text-color);
+  margin-bottom: 1rem;
+}
+
+.section-subtitle {
+  font-size: 1.2rem;
+  color: var(--text-color);
+  opacity: 0.8;
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.5;
+}
+
+/* Section Intro Styles */
+.section-intro {
+  text-align: center;
+  margin: 1.5rem 0;
+  padding: 0 1rem;
+  line-height: 1.6;
+  color: var(--text-color);
+}
+
+.section-intro p {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
 /* Responsive Design */
 @media (max-width: 900px) {
   .profile-card {
@@ -279,7 +443,11 @@
   }
 }
 
-@media (max-width: 767px) {
+@media (max-width: 768px) {
+  .about-me {
+    padding: 3rem 1rem;
+  }
+
   .sections-container {
     gap: 1rem;
   }
@@ -288,6 +456,45 @@
   .hobbies-section,
   .quiz-section {
     padding: 1.5rem;
+  }
+
+  .carousel-container {
+    padding: 0 40px;
+    gap: 1rem;
+  }
+
+  .carousel-content {
+    padding: 2rem;
+    min-height: 350px;
+  }
+
+  .section-icon {
+    font-size: 2.5rem;
+  }
+
+  .nav-button {
+    width: 40px;
+    height: 40px;
+    font-size: 1.2rem;
+    padding: 1rem;
+  }
+
+  .title-section {
+    margin-bottom: 3rem;
+  }
+
+  .section-title {
+    font-size: 2rem;
+  }
+
+  .section-subtitle {
+    font-size: 1.1rem;
+    padding: 0 1rem;
+  }
+
+  .section-intro {
+    margin: 1rem 0;
+    font-size: 0.95rem;
   }
 }
 
@@ -299,5 +506,23 @@
   .profile-picture {
     width: 180px;
     height: 180px;
+  }
+}
+
+@media (max-width: 480px) {
+  .nav-button {
+    width: 30px;
+    height: 30px;
+    font-size: 1rem;
+    padding: 0.5rem;
+  }
+
+  .carousel-container {
+    padding: 0 30px;
+  }
+
+  .carousel-content {
+    padding: 1.5rem;
+    min-height: 300px;
   }
 }
