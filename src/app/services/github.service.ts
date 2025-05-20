@@ -3,6 +3,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable, forkJoin } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { environment } from '../../environments/environment';
+import type { Environment } from '../../environments/environment.interface';
 
 export interface GithubStats {
   contributions: GithubContribution[];
@@ -53,13 +54,18 @@ interface GitHubRepo {
 export class GithubService {
   private readonly graphqlUrl = 'https://api.github.com/graphql';
   private readonly restUrl = 'https://api.github.com';
+  private readonly apiUrl = 'https://api.github.com/users/noahdav1d';
   private readonly username = 'noahdav1d';
   private headers: HttpHeaders;
 
   constructor(private http: HttpClient) {
-    this.headers = new HttpHeaders({
-      Authorization: `bearer ${environment.github.token}`,
-      'Content-Type': 'application/json',
+    this.headers = this.getHeaders();
+  }
+
+  private getHeaders(): HttpHeaders {
+    return new HttpHeaders({
+      'Authorization': `Bearer ${(environment as Environment).github.token}`,
+      'Accept': 'application/vnd.github.v3+json'
     });
   }
 

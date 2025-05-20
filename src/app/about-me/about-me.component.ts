@@ -1,13 +1,6 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-interface AboutSection {
-  title: string;
-  introduction: string;
-  content: string | string[];
-  icon: string;
-}
-
 @Component({
   selector: 'app-about-me',
   standalone: true,
@@ -16,57 +9,43 @@ interface AboutSection {
   styleUrls: ['./about-me.component.css'],
 })
 export class AboutMeComponent {
-  currentIndex = 0;
-
-  sections: AboutSection[] = [
+  slides = [
     {
-      title: 'Datenvisualisierung & Analytics',
-      introduction: 'Daten sind für mich mehr als nur Zahlen und Statistiken. Sie erzählen Geschichten und offenbaren versteckte Zusammenhänge. In meiner täglichen Arbeit nutze ich modernste Tools und Technologien, um aus komplexen Datensätzen wertvolle Erkenntnisse zu gewinnen.',
-      content: [
-        'Die Macht der Daten fasziniert mich seit meinem ersten SQL-Query.',
-        'Mein aktuelles Projekt: Entwicklung eines interaktiven Dashboards für Sportstatistiken.',
-        'Mit Power BI & Tableau habe ich bereits mehrere Visualisierungen erstellt.',
-        'Machine Learning und KI sind meine neuesten Interessengebiete.',
-        'Mein Ziel: Komplexe Daten in verständliche Geschichten übersetzen.',
-      ],
-      icon: '📊',
+      title: 'Meine Reise',
+      subtitle: 'Wie alles begann',
+      text: 'Schon früh begeisterte ich mich für Technik und Programmierung. Mein Weg führte mich von ersten Webseiten bis hin zu modernen Webanwendungen.',
+      link: '',
+      linkText: '',
     },
     {
-      title: 'Sport & Bewegung',
-      introduction: 'Sport ist für mich der perfekte Ausgleich zur Arbeit am Computer. Durch regelmäßige Bewegung und sportliche Herausforderungen halte ich Körper und Geist fit. Die Kombination aus Teamsport und individuellen Aktivitäten gibt mir die ideale Balance.',
-      content: [
-        'Basketball ist mehr als ein Hobby - 8 Jahre aktiv im Verein gespielt.',
-        'Meine Lieblings-Wanderroute: Von Grindelwald zum First (4h, 1000hm).',
-        'Im Winter findest du mich auf der Skipiste im Berner Oberland.',
-        'Jeden Morgen 30min Yoga für einen energiegeladenen Start.',
-        'Nächstes Ziel: Teilnahme am Bern City Marathon 2025.',
-      ],
-      icon: '🏀',
+      title: 'Meine Werte',
+      subtitle: 'Was mir wichtig ist',
+      text: 'Qualität, Kreativität und stetige Weiterentwicklung stehen für mich im Mittelpunkt. Ich liebe es, innovative Lösungen zu finden.',
+      link: '',
+      linkText: '',
     },
     {
-      title: 'Bücher die mich prägen',
-      introduction: 'Bücher sind meine wichtigsten Begleiter auf dem Weg der persönlichen und beruflichen Entwicklung. Sie inspirieren mich, erweitern meinen Horizont und helfen mir, neue Perspektiven zu entdecken. Jedes dieser Bücher hat mein Leben auf seine eigene Art bereichert.',
-      content: [
-        '"Atomic Habits" - Hat meine täglichen Routinen revolutioniert.',
-        '"Deep Work" - Dank diesem Buch arbeite ich fokussierter denn je.',
-        '"The Psychology of Money" - Veränderte meine Sicht auf Finanzen komplett.',
-        '"Digital Minimalism" - Inspirierte mich zu einem bewussteren Tech-Konsum.',
-        '"Range" - Bestätigte meinen vielseitigen Entwicklungsansatz.',
-      ],
-      icon: '📚',
+      title: 'Let’s connect!',
+      subtitle: '',
+      text: 'Du möchtest mehr erfahren oder gemeinsam etwas starten? Ich freue mich auf deine Nachricht!',
+      link: 'mailto:deine@email.de',
+      linkText: 'Kontakt aufnehmen',
     },
   ];
 
+  currentSlide = 0;
+
+  prevSlide() {
+    this.currentSlide =
+      this.currentSlide === 0 ? this.slides.length - 1 : this.currentSlide - 1;
+  }
+
   nextSlide() {
-    this.currentIndex = (this.currentIndex + 1) % this.sections.length;
+    this.currentSlide =
+      this.currentSlide === this.slides.length - 1 ? 0 : this.currentSlide + 1;
   }
 
-  previousSlide() {
-    this.currentIndex =
-      (this.currentIndex - 1 + this.sections.length) % this.sections.length;
-  }
-
-  getContent(content: string | string[]): string[] {
-    return Array.isArray(content) ? content : [content];
+  goToSlide(index: number) {
+    this.currentSlide = index;
   }
 }

@@ -8,6 +8,7 @@ import {
 } from '@angular/forms';
 import { RecaptchaModule } from 'ng-recaptcha';
 import { environment } from '../../environments/environment';
+import type { Environment } from '../../environments/environment.interface';
 import { EmailService } from '../services/email.service';
 
 @Component({
@@ -28,6 +29,7 @@ export class ContactComponent implements OnInit {
   constructor(private fb: FormBuilder, private emailService: EmailService) {}
 
   ngOnInit(): void {
+    this.siteKey = (environment as Environment).recaptcha.siteKey;
     this.initForm();
   }
 

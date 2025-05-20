@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import emailjs from '@emailjs/browser';
 import { environment } from '../../environments/environment';
+import type { Environment } from '../../environments/environment.interface';
 
 interface EmailForm {
   name: string;
@@ -14,7 +15,7 @@ interface EmailForm {
 })
 export class EmailService {
   constructor() {
-    emailjs.init(environment.emailjs.publicKey);
+    emailjs.init((environment as Environment).emailjs.publicKey);
   }
 
   async sendEmail(formData: EmailForm): Promise<any> {
@@ -22,15 +23,14 @@ export class EmailService {
       from_name: formData.name,
       from_email: formData.email,
       message: formData.message,
-      // Wichtig: Das reCAPTCHA Token muss exakt so übergeben werden
       'g-recaptcha-response': formData.recaptcha,
     };
 
     console.log('Template Params:', templateParams); // Debugging
 
     return await emailjs.send(
-      environment.emailjs.serviceId,
-      environment.emailjs.templateId,
+      (environment as Environment).emailjs.serviceId,
+      (environment as Environment).emailjs.templateId,
       templateParams
     );
   }

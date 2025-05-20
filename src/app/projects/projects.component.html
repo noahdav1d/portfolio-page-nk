@@ -1,45 +1,89 @@
-<section class="projects">
+<section class="hero">
   <h1 class="section-title">Projects</h1>
-  <p class="section-subtitle">Transforming ideas into impactful solutions.</p>
+  <p class="section-subtitle">Driven by data. Defined by ambition.</p>
+</section>
 
-  <div class="projects-container">
-    <!-- Card 1 -->
-    <div class="card">
-      <div class="card-inner">
-        <div class="card-front">
-          <p>Project 1</p>
+<div class="carousel-wrapper">
+  <div class="fullscreen-carousel">
+    <button class="nav-arrow prev" (click)="prevSlide()">
+      <i class="fas fa-chevron-left"></i>
+    </button>
+
+    <div class="carousel-container">
+      <div
+        class="slides"
+        [style.transform]="'translateX(' + -currentSlide * 25 + '%)'"
+      >
+        <!-- Intro Slide -->
+        <div class="slide intro-slide">
+          <div class="slide-content">
+            <h1>Meine Projekte</h1>
+            <p>Eine Übersicht meiner wichtigsten Entwicklungsprojekte</p>
+            <p class="subtitle">Swipe oder nutze die Pfeile zum Navigieren</p>
+          </div>
         </div>
-        <div class="card-back">
-          <p>Details about Project 1</p>
+
+        <!-- Project 1 -->
+        <div class="slide">
+          <div class="slide-content">
+            <h2>Portfolio Website</h2>
+            <p>
+              Eine moderne Portfolio-Website mit Angular, die Dark Mode, GitHub
+              Integration und responsive Design bietet.
+            </p>
+            <a
+              href="https://github.com/noahdav1d/portfolio-page-nk"
+              class="github-btn"
+            >
+              <i class="fab fa-github"></i> GitHub
+            </a>
+          </div>
+        </div>
+
+        <!-- Project 2 -->
+        <div class="slide">
+          <div class="slide-content">
+            <h2>Data Dashboard</h2>
+            <p>
+              Ein interaktives Dashboard zur Visualisierung von Daten mit D3.js
+              und Angular.
+            </p>
+            <a href="#" class="github-btn">
+              <i class="fab fa-github"></i> GitHub
+            </a>
+          </div>
+        </div>
+
+        <!-- Project 3 -->
+        <div class="slide">
+          <div class="slide-content">
+            <h2>Task Manager</h2>
+            <p>
+              Eine Full-Stack Anwendung zur Verwaltung von Projekten mit Node.js
+              und Angular.
+            </p>
+            <a href="#" class="github-btn">
+              <i class="fab fa-github"></i> GitHub
+            </a>
+          </div>
         </div>
       </div>
     </div>
 
-    <!-- Card 2 -->
-    <div class="card">
-      <div class="card-inner">
-        <div class="card-front">
-          <p>Project 2</p>
-        </div>
-        <div class="card-back">
-          <p>Details about Project 2</p>
-        </div>
-      </div>
-    </div>
+    <button class="nav-arrow next" (click)="nextSlide()">
+      <i class="fas fa-chevron-right"></i>
+    </button>
 
-    <!-- Card 3 -->
-    <div class="card">
-      <div class="card-inner">
-        <div class="card-front">
-          <p>Project 3</p>
-        </div>
-        <div class="card-back">
-          <p>Details about Project 3</p>
-        </div>
-      </div>
+    <div class="slide-indicators">
+      <span
+        *ngFor="let _ of [0, 1, 2, 3]; let i = index"
+        [class.active]="i === currentSlide"
+        (click)="goToSlide(i)"
+      >
+      </span>
     </div>
   </div>
-</section>
+</div>
 
 <section class="github-activity">
   <h2 class="section-title">GitHub Statistiken</h2>
