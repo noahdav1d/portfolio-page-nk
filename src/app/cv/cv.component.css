@@ -13,6 +13,8 @@
   padding: 2rem;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.5rem;
 }
 
 .cv-section:hover {
@@ -21,10 +23,12 @@
 }
 
 .cv-section-title {
-  font-size: clamp(1.5rem, 3vw, 1.8rem);
-  font-weight: bold;
+  font-size: 1.4rem;
+  font-weight: 600;
   color: var(--text-color);
-  margin-bottom: 1.5rem;
+  margin-bottom: 0.5rem;
+  margin-top: 1.2rem;
+  letter-spacing: 0.5px;
   text-align: center;
 }
 
@@ -41,24 +45,35 @@
   border-radius: 8px;
   padding: clamp(1rem, 3vw, 1.5rem);
   transition: all 0.3s ease;
+  margin-bottom: 0.7rem;
+  padding-bottom: 0.7rem;
+  border-bottom: 1px solid #ececec;
 }
 
 .cv-item:hover {
-  background-color: #e0f7fa; /* Helle Türkisfarbe beim Hover */
+  background-color: #77b3e47b; /* Helle Türkisfarbe beim Hover */
   transform: translateY(-3px);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
 }
 
 .cv-item h3 {
-  font-size: clamp(1.2rem, 2.5vw, 1.4rem);
-  margin-bottom: 0.5rem;
+  font-size: 1.1rem;
+  margin: 0 0 0.2rem 0;
+  font-weight: 500;
   color: var(--primary-color);
 }
 
-.cv-item p {
+.cv-item h4 {
   font-size: 1rem;
-  color: var(--text-color);
-  margin: 0;
+  margin: 0 0 0.2rem 0;
+  font-weight: 400;
+  color: #555;
+}
+
+.cv-item p {
+  font-size: 0.98rem;
+  color: #333;
+  margin: 0 0 0.2rem 0;
 }
 
 .cv-sublist {
@@ -177,6 +192,7 @@ body.dark-mode .cv-subitem {
   height: 300px; /* Feste Höhe statt variabel */
   margin: 0 auto;
   position: relative; /* Wichtig für Chart.js */
+  max-width: 500px;
 }
 
 /* Skills Section */
@@ -218,7 +234,7 @@ body.dark-mode .cv-subitem {
   border: 1px solid var(--text-color);
   border-radius: 12px;
   padding: 1.5rem;
-  margin: 1.5rem auto;
+  margin: 2rem auto;
   max-width: 800px;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }

@@ -8,7 +8,7 @@
   width: 100vw;
   margin-left: calc(-50vw + 50%);
   margin-right: calc(-50vw + 50%);
-  background: linear-gradient(45deg, #1a237e, #303f9f);
+  background: linear-gradient(45deg, #1a237e, #77b3e4);
   overflow: hidden;
   position: relative;
 }
@@ -59,7 +59,7 @@
 }
 
 .slide-content h2 {
-  font-size: 2.5rem;
+  font-size: 2 rem;
   margin-bottom: 1.5rem;
 }
 

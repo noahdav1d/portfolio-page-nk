@@ -1,93 +1,3 @@
-/* Container for the cards */
-.projects-container {
-  display: flex;
-  flex-wrap: wrap; /* Ermöglicht Umbruch der Karten */
-  justify-content: center; /* Zentriert die Karten */
-  gap: 20px; /* Abstand zwischen den Karten */
-  padding: 20px; /* Zusätzlicher Abstand innerhalb des Containers */
-  box-sizing: border-box; /* Stellt sicher, dass Padding korrekt berechnet wird */
-}
-
-/* Card styles */
-.card {
-  width: 300px; /* Feste Breite der Karten */
-  height: 200px; /* Feste Höhe der Karten */
-  perspective: 1000px; /* Ermöglicht 3D-Effekt */
-  box-sizing: border-box; /* Stellt sicher, dass Border und Padding korrekt berechnet werden */
-  flex-shrink: 0; /* Verhindert, dass die Karten schrumpfen */
-  margin: 10px; /* Zusätzlicher Abstand zwischen den Karten */
-}
-
-.card-inner {
-  width: 100%;
-  height: 100%;
-  position: relative;
-  transform-style: preserve-3d;
-  transition: transform 0.999s;
-}
-
-.card:hover .card-inner {
-  transform: rotateY(180deg);
-}
-
-.card-front,
-.card-back {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  backface-visibility: hidden;
-  box-sizing: border-box; /* Stellt sicher, dass Border korrekt berechnet wird */
-}
-
-.card-front {
-  background-color: #6a2c70;
-  color: #fff;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border: 10px solid #6a2c70;
-  border-radius: 10px;
-  font-size: 24px;
-  transform: rotateY(0deg);
-}
-
-.card-back {
-  background-color: #f08a5d;
-  color: #fff;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border: 10px solid #f08a5d;
-  border-radius: 10px;
-  font-size: 24px;
-  transform: rotateY(180deg);
-}
-
-/* Responsiveness for smaller screens */
-@media (max-width: 768px) {
-  .projects-container {
-    flex-direction: column; /* Karten untereinander anordnen */
-    align-items: center; /* Zentriert die Karten */
-    gap: 20px; /* Vertikaler Abstand zwischen den Karten */
-  }
-
-  .card {
-    width: 90%; /* Karten nehmen 90% der Breite des Bildschirms ein */
-    max-width: 300px; /* Begrenzung der Breite */
-    aspect-ratio: 3 / 2; /* Stellt sicher, dass die Karten ein Rechteck bleiben */
-    margin: 15px auto; /* Zentriert die Karten horizontal */
-  }
-
-  .card-inner {
-    height: 100%; /* Passt die Höhe an die Karte an */
-  }
-
-  .card-front,
-  .card-back {
-    font-size: 16px; /* Kleinere Schriftgröße für mobile Geräte */
-  }
-}
-
 /* GitHub Activity Styles */
 .github-activity {
   padding: 2rem;
@@ -137,7 +47,9 @@
 
 /* GitHub Stats Styles */
 .github-stats {
-  max-width: 1200px;
+  width: 80vw;
+  margin-left: calc(-50vw + 50%);
+  margin-right: calc(-50vw + 50%);
   margin: 0 auto;
   padding: 2rem;
   border-radius: 8px;
@@ -357,7 +269,7 @@ body {
   width: 100vw;
   margin-left: calc(-50vw + 50%);
   margin-right: calc(-50vw + 50%);
-  background: linear-gradient(45deg, #1a237e, #303f9f);
+  background: linear-gradient(45deg, #1a237e, #77b3e4);
   overflow: hidden;
   position: relative;
 }

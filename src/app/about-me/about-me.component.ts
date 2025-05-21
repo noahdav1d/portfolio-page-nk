@@ -11,25 +11,25 @@ import { CommonModule } from '@angular/common';
 export class AboutMeComponent {
   slides = [
     {
-      title: 'Meine Reise',
-      subtitle: 'Wie alles begann',
-      text: 'Schon früh begeisterte ich mich für Technik und Programmierung. Mein Weg führte mich von ersten Webseiten bis hin zu modernen Webanwendungen.',
+      title: 'Data',
+      subtitle: 'Data nerd since day one',
+      text: 'Numbers and statistics have been with me since I was a child, I always memorized the number of goals scored by my favourite football players. I discussed numbers and facts with my friends and family members and was always interested in creating value from data.',
       link: '',
       linkText: '',
     },
     {
-      title: 'Meine Werte',
-      subtitle: 'Was mir wichtig ist',
-      text: 'Qualität, Kreativität und stetige Weiterentwicklung stehen für mich im Mittelpunkt. Ich liebe es, innovative Lösungen zu finden.',
-      link: '',
-      linkText: '',
+      title: 'Sports & Adventure',
+      subtitle: 'Movement enthusiast and nature explorer',
+      text: 'Sport has been a big part of my life for as long as I can remember, be it playing handball at the club, jogging after a hard day`s work or hiking on Sundays. I love all kinds of sports and am always up for an adventure.',
+      link: 'https://staywildtravels.com/augstmatthorn-hike/',
+      linkText: 'favourite hike',
     },
     {
-      title: 'Let’s connect!',
-      subtitle: '',
-      text: 'Du möchtest mehr erfahren oder gemeinsam etwas starten? Ich freue mich auf deine Nachricht!',
-      link: 'mailto:deine@email.de',
-      linkText: 'Kontakt aufnehmen',
+      title: 'Reading',
+      subtitle: 'Quiet minutes with a book',
+      text: 'I have been reading books for several years now. I like to immerse myself in fictional stories by great authors like Suzan Collins or Benedict Wells. But I am also always up for reading biographies such as these of Bill Gates, Phil Knight or Lebron James.',
+      link: '',
+      linkText: '',
     },
   ];
 
