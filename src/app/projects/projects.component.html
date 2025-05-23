@@ -111,13 +111,13 @@
 </div>
 
 <section class="github-activity">
-  <h2 class="section-title">GitHub Statistiken</h2>
+  <h2 class="section-title">GitHub Stats</h2>
 
   <div class="github-stats" *ngIf="!isLoading">
     <div class="stats-grid">
       <div class="stat-card">
         <span class="stat-number">{{ githubStats.totalContributions }}</span>
-        <span class="stat-label">Beiträge insgesamt</span>
+        <span class="stat-label">Total contributions</span>
       </div>
       <div class="stat-card">
         <span class="stat-number">{{ githubStats.repositories }}</span>
@@ -125,12 +125,12 @@
       </div>
       <div class="stat-card">
         <span class="stat-number">{{ githubStats.followers }}</span>
-        <span class="stat-label">Follower</span>
+        <span class="stat-label">Followers</span>
       </div>
     </div>
 
     <div class="languages-section">
-      <h3>Top Programmiersprachen</h3>
+      <h3>Top Programming Languages</h3>
       <div class="language-bars">
         <div *ngFor="let lang of githubStats.topLanguages" class="language-bar">
           <div class="bar-label">{{ lang.name }}</div>
@@ -145,17 +145,17 @@
     <div class="streak-info">
       <div>
         <span class="streak-number">{{ githubStats.streak.current }}</span>
-        <span class="streak-label">Aktuelle Serie</span>
+        <span class="streak-label">Current streak</span>
       </div>
       <div>
         <span class="streak-number">{{ githubStats.streak.longest }}</span>
-        <span class="streak-label">Längste Serie</span>
+        <span class="streak-label">Longest streak</span>
       </div>
     </div>
   </div>
 
   <div class="loading-spinner" *ngIf="isLoading">
     <div class="spinner"></div>
-    <span>Lade GitHub Statistiken...</span>
+    <span>Loading GitHub statistics...</span>
   </div>
 </section>

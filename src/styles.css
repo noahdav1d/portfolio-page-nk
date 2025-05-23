@@ -1,12 +1,7 @@
-/* Global Styles mit Dark Mode Unterstützung */
+/* Global Styles ohne Dark Mode */
 :root {
   --background-color: white;
   --text-color: black;
-}
-
-.dark-mode {
-  --background-color: #121212;
-  --text-color: white;
 }
 
 html,
@@ -21,95 +16,26 @@ body {
   background-color: var(--background-color);
   color: var(--text-color);
   transition: background 0.3s, color 0.3s;
-  opacity: 1; /* Keine Transparenz */
-}
-
-/* Dark Mode Switch */
-.switch-container {
-  position: fixed;
-  top: 10px;
-  right: 10px;
-  z-index: 1000;
-}
-
-/* The switch - the box around the slider */
-.switch {
-  display: block;
-  --width-of-switch: 3.5em;
-  --height-of-switch: 2em;
-  --size-of-icon: 1.4em;
-  --slider-offset: 0.3em;
-  position: relative;
-  width: var(--width-of-switch);
-  height: var(--height-of-switch);
-}
-
-/* Hide default HTML checkbox */
-.switch input {
-  opacity: 0;
-  width: 0;
-  height: 0;
-}
-
-/* The slider */
-.slider {
-  position: absolute;
-  cursor: pointer;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: #f4f4f5; /* Undurchsichtige Farbe */
-  transition: 0.4s;
-  border-radius: 30px;
-  opacity: 1; /* Keine Transparenz */
-}
-
-.slider:before {
-  position: absolute;
-  content: "";
-  height: var(--size-of-icon, 1.4em);
-  width: var(--size-of-icon, 1.4em);
-  border-radius: 20px;
-  left: var(--slider-offset, 0.3em);
-  top: 50%;
-  transform: translateY(-50%);
-  background: linear-gradient(
-    40deg,
-    #ff0050,
-    #ff7f00 70%
-  ); /* Intensiverer Farbverlauf */
-  transition: 0.4s;
-  opacity: 1; /* Keine Transparenz */
-}
-
-input:checked + .slider {
-  background-color: #1a1a1a; /* Intensiveres Schwarz */
-}
-
-input:checked + .slider:before {
-  left: calc(100% - (var(--size-of-icon, 1.4em) + var(--slider-offset, 0.3em)));
-  background: #303136;
-  box-shadow: inset -3px -2px 5px -2px #8983f7, inset -10px -4px 0 0 #a3dafb;
+  opacity: 1;
 }
 
 /* Globale CSS-Regeln für Überschriften und Untertitel */
 .section-title {
   text-align: center;
-  font-size: 2.3rem; /* Kleinere Schriftgröße */
+  font-size: 2.3rem;
   font-weight: bold;
   margin: 0;
   color: var(--text-color);
-  position: relative; /* Ändert von absolute zu relative */
-  margin-top: 40px; /* Mehr Abstand nach oben */
-  margin-bottom: 20px; /* Abstand zum Untertitel */
+  position: relative;
+  margin-top: 40px;
+  margin-bottom: 20px;
 }
 
 .section-subtitle {
   text-align: center;
-  font-size: 1.2rem; /* Kleinere Schriftgröße */
+  font-size: 1.2rem;
   font-weight: normal;
   color: var(--text-color);
-  margin-bottom: 40px; /* Mehr Abstand zum Seiteninhalt */
-  position: relative; /* Ändert von absolute zu relative */
+  margin-bottom: 40px;
+  position: relative;
 }
