@@ -1,0 +1,114 @@
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--background-color) !important;
+}
+
+section {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 50px;
+  transition: opacity 1s ease-in-out, transform 1s ease-in-out;
+}
+
+section:not(:first-child) {
+  opacity: 0.5;
+  transform: translateY(50px);
+}
+
+section.in-view {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Container for the cards */
+.projects-container {
+  display: flex;
+  flex-wrap: wrap; /* Ermöglicht Umbruch der Karten */
+  justify-content: center; /* Zentriert die Karten */
+  gap: 20px; /* Abstand zwischen den Karten */
+  padding: 20px; /* Zusätzlicher Abstand innerhalb des Containers */
+  box-sizing: border-box; /* Stellt sicher, dass Padding korrekt berechnet wird */
+}
+
+/* Card styles */
+.card {
+  width: 100%; /* Karten nehmen die gesamte Breite ein */
+  max-width: 300px; /* Begrenzung der Breite */
+  height: 200px;
+  perspective: 1000px;
+  box-sizing: border-box; /* Stellt sicher, dass Border und Padding korrekt berechnet werden */
+  flex-shrink: 0; /* Verhindert, dass die Karten schrumpfen */
+  display: flex; /* Stellt sicher, dass die Karten-Inhalte korrekt angezeigt werden */
+  align-items: center; /* Zentriert den Inhalt vertikal */
+  justify-content: center; /* Zentriert den Inhalt horizontal */
+}
+
+/* Inneres der Karte */
+.card-inner {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.999s;
+}
+
+.card:hover .card-inner {
+  transform: rotateY(180deg);
+}
+
+.card-front,
+.card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+}
+
+.card-front {
+  background-color: #6a2c70;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 10px solid #6a2c70;
+  border-radius: 10px;
+  font-size: 24px;
+  transform: rotateY(0deg);
+}
+
+.card-back {
+  background-color: #f08a5d;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 10px solid #f08a5d;
+  border-radius: 10px;
+  font-size: 24px;
+  transform: rotateY(180deg);
+}
+
+/* Responsiveness for smaller screens */
+@media (max-width: 768px) {
+  .projects-container {
+    flex-direction: column; /* Karten untereinander anordnen */
+    align-items: center; /* Zentriert die Karten */
+    gap: 20px; /* Vertikaler Abstand zwischen den Karten */
+  }
+
+  .card {
+    width: 90%; /* Karten nehmen 90% der Breite ein */
+    max-width: 300px; /* Begrenzung der Breite */
+    margin: 10px auto; /* Zentriert die Karten horizontal */
+    height: auto; /* Passt die Höhe automatisch an */
+  }
+
+  .card-inner {
+    height: 200px; /* Stellt sicher, dass die Karten eine feste Höhe haben */
+  }
+}

@@ -1,0 +1,334 @@
+.cv-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+  display: grid;
+  gap: 2rem;
+}
+
+.cv-section {
+  background-color: var(--background-color);
+  border: 1px solid var(--text-color);
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.5rem;
+}
+
+.cv-section:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+}
+
+.cv-section-title {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: var(--text-color);
+  margin-bottom: 0.5rem;
+  margin-top: 1.2rem;
+  letter-spacing: 0.5px;
+  text-align: center;
+}
+
+.cv-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 1.5rem;
+}
+
+.cv-item {
+  background-color: var(--card-background);
+  border-radius: 8px;
+  padding: clamp(1rem, 3vw, 1.5rem);
+  transition: all 0.3s ease;
+  margin-bottom: 0.7rem;
+  padding-bottom: 0.7rem;
+  border-bottom: 1px solid #ececec;
+}
+
+.cv-item:hover {
+  background-color: #77b3e47b; /* Helle Türkisfarbe beim Hover */
+  transform: translateY(-3px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.cv-item h3 {
+  font-size: 1.1rem;
+  margin: 0 0 0.2rem 0;
+  font-weight: 500;
+  color: var(--primary-color);
+}
+
+.cv-item h4 {
+  font-size: 1rem;
+  margin: 0 0 0.2rem 0;
+  font-weight: 400;
+  color: #555;
+}
+
+.cv-item p {
+  font-size: 0.98rem;
+  color: #333;
+  margin: 0 0 0.2rem 0;
+}
+
+.cv-sublist {
+  list-style: none;
+  padding-left: 20px;
+  margin-top: 10px;
+}
+
+.cv-subitem {
+  font-size: 0.9rem;
+  color: #666;
+  margin-bottom: 5px;
+}
+
+/* Dark Mode Anpassungen */
+body.dark-mode .cv-item {
+  background-color: #1e1e1e; /* Dunkler Hintergrund für Dark Mode */
+}
+
+body.dark-mode .cv-item:hover {
+  background-color: #333; /* Hellerer Hintergrund beim Hover im Dark Mode */
+}
+
+body.dark-mode .cv-subitem {
+  color: #aaa; /* Hellerer Text für Unterpunkte im Dark Mode */
+}
+
+/* Allgemeine Überschriften-Anpassung */
+.section-title {
+  text-align: center;
+  font-size: 2.3rem; /* Kleinere Schriftgröße */
+  font-weight: bold;
+  margin: 0;
+  color: var(--text-color);
+  position: relative; /* Ändert von absolute zu relative */
+  margin-top: 20px; /* Abstand nach oben */
+}
+
+.section-subtitle {
+  text-align: center;
+  font-size: 1.2rem; /* Kleinere Schriftgröße */
+  font-weight: normal;
+  color: var(--text-color);
+  margin-bottom: 20px;
+  position: relative; /* Ändert von absolute zu relative */
+}
+
+/* Timeline Section */
+.timeline-item {
+  margin-bottom: 2rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.timeline-item:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.timeline-content h3 {
+  color: var(--primary-color);
+  font-size: 1.4rem;
+  margin-bottom: 0.5rem;
+}
+
+.timeline-info {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  font-size: clamp(0.9rem, 2vw, 0.95rem);
+  color: var(--text-color-secondary);
+}
+
+.description-list {
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0;
+  padding-left: 1.2rem;
+}
+
+.description-list li {
+  position: relative;
+  margin-bottom: 0.8rem;
+  line-height: 1.6;
+  font-size: clamp(0.9rem, 2vw, 1rem);
+}
+
+.description-list li::before {
+  content: "→";
+  position: absolute;
+  left: 0;
+  color: var(--primary-color);
+}
+
+.tech-stack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+  margin-top: 1.5rem;
+}
+
+.tech-tag {
+  background: var(--primary-color);
+  color: white;
+  padding: 0.4rem 1rem;
+  border-radius: 20px;
+  font-size: clamp(0.8rem, 1.8vw, 0.9rem);
+  white-space: nowrap;
+}
+
+/* Skills Chart Section */
+.chart-container {
+  width: 100%;
+  height: 300px; /* Feste Höhe statt variabel */
+  margin: 0 auto;
+  position: relative; /* Wichtig für Chart.js */
+  max-width: 500px;
+}
+
+/* Skills Section */
+.skills-container {
+  width: 100%;
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 1rem;
+}
+
+.skill-item {
+  margin-bottom: 1.5rem;
+}
+
+.skill-name {
+  font-size: 1rem;
+  color: var(--text-color);
+  margin-bottom: 0.5rem;
+}
+
+.skill-bar {
+  width: 100%;
+  height: 8px;
+  background-color: var(--border-color);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.skill-level {
+  height: 100%;
+  background-color: var(--primary-color);
+  border-radius: 4px;
+  transition: width 1s ease-in-out;
+}
+
+/* Skills Section */
+.skills-section {
+  background-color: var(--background-color);
+  border: 1px solid var(--text-color);
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin: 2rem auto;
+  max-width: 800px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive Design */
+@media (min-width: 768px) {
+  .cv-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .cv-container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .cv-container {
+    padding: 1rem;
+  }
+
+  .cv-section {
+    padding: 1.5rem;
+  }
+
+  .timeline-info {
+    flex-direction: column;
+  }
+
+  .tech-stack {
+    gap: 0.6rem;
+  }
+
+  .tech-tag {
+    padding: 0.3rem 0.8rem;
+  }
+
+  .chart-container {
+    height: 250px;
+  }
+
+  .skills-container {
+    padding: 0.8rem;
+  }
+
+  .skill-bar {
+    height: 6px;
+  }
+
+  .skills-section {
+    padding: 1rem;
+    margin: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .cv-container {
+    padding: 0.8rem;
+  }
+
+  .cv-section {
+    padding: 1.2rem;
+  }
+
+  .chart-container {
+    height: 200px;
+  }
+
+  .description-list {
+    padding-left: 1rem;
+  }
+
+  .skills-section {
+    padding: 0.75rem;
+    margin: 0.75rem;
+    border-radius: 8px;
+  }
+}
+
+/* Print Styles */
+@media print {
+  .cv-container {
+    padding: 0;
+  }
+
+  .cv-section {
+    break-inside: avoid;
+    box-shadow: none;
+    border: 1px solid #ddd;
+  }
+
+  .chart-container {
+    break-inside: avoid;
+    height: 300px;
+  }
+}

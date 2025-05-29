@@ -1,0 +1,80 @@
+<section class="about-me">
+  <div class="title-section">
+    <h1 class="section-title">About Me</h1>
+    <p class="section-subtitle">Find out more about me</p>
+  </div>
+</section>
+
+<section class="carousel-section">
+  <div class="carousel-wrapper">
+    <div class="fullscreen-carousel">
+      <div class="carousel-container">
+        <div
+          class="slides"
+          [ngStyle]="{ width: slides.length * 100 + '%' }"
+          [style.transform]="
+            'translateX(-' + currentSlide * (100 / slides.length) + '%)'
+          "
+        >
+          <div
+            class="slide"
+            *ngFor="let slide of slides"
+            [ngStyle]="{ width: 100 / slides.length + '%' }"
+          >
+            <div class="slide-content">
+              <h1>{{ slide.title }}</h1>
+              <h2 *ngIf="slide.subtitle">{{ slide.subtitle }}</h2>
+              <p>{{ slide.text }}</p>
+              <a
+                *ngIf="slide.link"
+                [href]="slide.link"
+                class="github-btn"
+                target="_blank"
+                rel="noopener"
+              >
+                <span>{{ slide.linkText }}</span>
+              </a>
+            </div>
+          </div>
+        </div>
+        <button
+          class="nav-arrow prev"
+          (click)="prevSlide()"
+          aria-label="Vorheriges Slide"
+        >
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+            <path
+              d="M15 18l-6-6 6-6"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
+        </button>
+        <button
+          class="nav-arrow next"
+          (click)="nextSlide()"
+          aria-label="Nächstes Slide"
+        >
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+            <path
+              d="M9 6l6 6-6 6"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
+        </button>
+        <div class="slide-indicators">
+          <span
+            *ngFor="let slide of slides; let i = index"
+            [class.active]="i === currentSlide"
+            (click)="goToSlide(i)"
+          ></span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,40 @@
+:root {
+  --background-color: white;
+  --text-color: black;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  height: 100%;
+}
+
+body {
+  background-color: var(--background-color);
+  color: var(--text-color);
+  transition: background 0.3s, color 0.3s;
+  opacity: 1;
+}
+
+/* Globale CSS-Regeln für Überschriften und Untertitel */
+.section-title {
+  text-align: center;
+  font-size: 2.3rem;
+  font-weight: bold;
+  margin: 0;
+  color: var(--text-color);
+  position: relative;
+  margin-top: 40px;
+  margin-bottom: 20px;
+}
+
+.section-subtitle {
+  text-align: center;
+  font-size: 1.2rem;
+  font-weight: normal;
+  color: var(--text-color);
+  margin-bottom: 40px;
+  position: relative;
+}

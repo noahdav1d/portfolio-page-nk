@@ -1,0 +1,102 @@
+<section class="contact">
+  <div
+    class="notification"
+    [class.success]="notificationType === 'success'"
+    [class.error]="notificationType === 'error'"
+    [class.show]="showNotification"
+  >
+    {{ notificationMessage }}
+  </div>
+
+  <h1 class="section-title">Contact</h1>
+  <p class="section-subtitle">
+    Do you have questions, feedback or want to collaborate? Feel free to contact
+    me!
+  </p>
+
+  <div class="form-container">
+    <form
+      [formGroup]="contactForm"
+      (ngSubmit)="onSubmit()"
+      class="contact-form"
+    >
+      <div class="form-group">
+        <label for="name">Your Name</label>
+        <input
+          type="text"
+          id="name"
+          formControlName="name"
+          [class.invalid]="
+            contactForm.get('name')?.invalid && contactForm.get('name')?.touched
+          "
+        />
+        <div
+          class="error-message"
+          *ngIf="
+            contactForm.get('name')?.invalid && contactForm.get('name')?.touched
+          "
+        >
+          Please enter your name
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="email">Your Email</label>
+        <input
+          type="email"
+          id="email"
+          formControlName="email"
+          [class.invalid]="
+            contactForm.get('email')?.invalid &&
+            contactForm.get('email')?.touched
+          "
+        />
+        <div
+          class="error-message"
+          *ngIf="
+            contactForm.get('email')?.invalid &&
+            contactForm.get('email')?.touched
+          "
+        >
+          Please enter a valid email address
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="message">Your Message</label>
+        <textarea
+          id="message"
+          formControlName="message"
+          rows="5"
+          [class.invalid]="
+            contactForm.get('message')?.invalid &&
+            contactForm.get('message')?.touched
+          "
+        ></textarea>
+        <div
+          class="error-message"
+          *ngIf="
+            contactForm.get('message')?.invalid &&
+            contactForm.get('message')?.touched
+          "
+        >
+          Please enter a message (at least 10 characters)
+        </div>
+      </div>
+
+      <re-captcha
+        formControlName="recaptcha"
+        (resolved)="onRecaptchaResolved($event)"
+      ></re-captcha>
+
+      <!-- Füge Validierungs-Feedback hinzu -->
+      <button
+        type="submit"
+        [disabled]="!contactForm.valid || isSubmitting"
+        class="submit-button"
+      >
+        {{ isSubmitting ? "Sending..." : "Send Message" }}
+      </button>
+    </form>
+  </div>
+</section>

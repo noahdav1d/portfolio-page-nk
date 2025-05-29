@@ -1,0 +1,101 @@
+.hero-centered {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center; /* Ändere zu center statt flex-start */
+  min-height: 100vh; /* Ändere zu 100vh für volle Bildschirmhöhe */
+  padding: 0; /* Entferne padding-top */
+  position: relative; /* Für absolute Positionierung der Kinder */
+}
+
+.hero-photo-wrapper {
+  margin-bottom: 2rem;
+  margin-top: 4vh; /* von 2vh auf 4vh erhöht für mehr Abstand nach den Titeln */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-photo {
+  width: 240px; /* von 160px auf 240px erhöht */
+  height: 240px; /* von 160px auf 240px erhöht */
+  object-fit: cover;
+  border-radius: 50%;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+  border: 4px solid #fff;
+  background: #eee;
+}
+
+.hero-title {
+  font-size: 2.5rem; /* Leerzeichen entfernt bei 2.5 rem */
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  color: #333;
+  text-align: center;
+  margin-top: 1rem; /* Neuer Wert für weniger Abstand oben */
+}
+
+.hero-subtitle {
+  font-size: 1.2rem;
+  font-weight: normal;
+  color: #666;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.hero-quote {
+  font-size: 1.4rem;
+  font-style: italic;
+  text-align: center;
+  margin-bottom: 1rem;
+  color: #333;
+  max-width: 500px;
+}
+
+.quote-author {
+  font-size: 1.1rem;
+  color: #888;
+  text-align: center;
+}
+
+.social-buttons {
+  display: flex;
+  gap: 1rem;
+  margin-top: 2rem;
+  justify-content: center;
+}
+
+.social-link {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  text-decoration: none;
+  border-radius: 30px;
+  transition: all 0.3s ease;
+  background: rgba(0, 0, 0, 0.05);
+  color: #333;
+}
+
+.social-link:hover {
+  transform: translateY(-2px);
+  background: rgba(0, 0, 0, 0.1);
+}
+
+.social-icon {
+  width: 24px;
+  height: 24px;
+  fill: currentColor;
+}
+
+.social-text {
+  font-size: 0.9rem;
+}
+
+.github:hover {
+  color: #333;
+}
+
+.linkedin:hover {
+  color: #0077b5;
+}
